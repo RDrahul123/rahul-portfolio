@@ -24,7 +24,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="text-lg leading-relaxed text-ledger/85"
+              className="text-lg leading-relaxed text-text/80"
             >
               {p}
             </motion.p>
@@ -35,7 +35,7 @@ export default function About() {
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="h-fit rounded-2xl border border-grid bg-white/40 p-6 font-mono text-xs text-ledger"
+          className="h-fit rounded-2xl border border-line bg-surface p-6 font-mono text-xs text-text/90"
         >
           <dl className="space-y-4">
             <div>

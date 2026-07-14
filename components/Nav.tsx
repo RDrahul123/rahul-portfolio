@@ -11,20 +11,20 @@ const links = [
 
 export default function Nav() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-grid bg-paper/85 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-line bg-bg/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a
           href="#top"
-          className="font-mono text-sm font-medium tracking-tight text-ink"
+          className="font-mono text-sm font-medium tracking-tight text-text"
         >
-          rahul<span className="text-signal">.dodke</span>
+          rahul<span className="text-accent">.dodke</span>
         </a>
         <ul className="hidden items-center gap-8 font-mono text-xs uppercase tracking-widest text-muted sm:flex">
           {links.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="transition-colors hover:text-signal"
+                className="transition-colors hover:text-accent2"
               >
                 {link.label}
               </a>
@@ -33,7 +33,7 @@ export default function Nav() {
         </ul>
         <a
           href={profile.resumeUrl}
-          className="rounded-full border border-ink px-4 py-1.5 font-mono text-xs uppercase tracking-widest text-ink transition-colors hover:border-signal hover:text-signal"
+          className="rounded-full border border-line px-4 py-1.5 font-mono text-xs uppercase tracking-widest text-text transition-colors hover:border-accent hover:text-accent"
         >
           Resume
         </a>

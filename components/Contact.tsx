@@ -20,19 +20,20 @@ export default function Contact() {
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="rounded-2xl border border-grid bg-ink p-10 text-paper sm:p-14"
+        className="relative overflow-hidden rounded-2xl border border-line bg-surface p-10 sm:p-14"
       >
-        <p className="font-mono text-xs uppercase tracking-widest text-paper/50">
+        <div className="pointer-events-none absolute inset-0 bg-grad-glow opacity-60" />
+        <p className="relative font-mono text-xs uppercase tracking-widest text-accent2">
           &gt; contact --send
         </p>
-        <h2 className="mt-4 max-w-lg font-display text-3xl font-semibold leading-tight sm:text-4xl">
+        <h2 className="relative mt-4 max-w-lg font-display text-3xl font-semibold leading-tight text-text sm:text-4xl">
           Have a project, a role, or a question? I read every message.
         </h2>
 
-        <div className="mt-8 flex flex-wrap gap-4">
+        <div className="relative mt-8 flex flex-wrap gap-4">
           <a
             href={`mailto:${profile.email}`}
-            className="flex items-center gap-2 rounded-full bg-paper px-6 py-3 font-mono text-xs uppercase tracking-widest text-ink transition-colors hover:bg-pulse hover:text-paper"
+            className="flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-mono text-xs uppercase tracking-widest text-bg transition-opacity hover:opacity-85"
           >
             <Mail size={15} />
             Email me
@@ -41,7 +42,7 @@ export default function Contact() {
             href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-full border border-paper/30 px-6 py-3 font-mono text-xs uppercase tracking-widest text-paper transition-colors hover:border-paper"
+            className="flex items-center gap-2 rounded-full border border-line px-6 py-3 font-mono text-xs uppercase tracking-widest text-text transition-colors hover:border-accent2 hover:text-accent2"
           >
             <Github size={15} />
             GitHub
@@ -50,7 +51,7 @@ export default function Contact() {
             href={profile.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-full border border-paper/30 px-6 py-3 font-mono text-xs uppercase tracking-widest text-paper transition-colors hover:border-paper"
+            className="flex items-center gap-2 rounded-full border border-line px-6 py-3 font-mono text-xs uppercase tracking-widest text-text transition-colors hover:border-accent2 hover:text-accent2"
           >
             <Linkedin size={15} />
             LinkedIn

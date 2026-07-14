@@ -4,12 +4,12 @@ Built with Next.js 14 (App Router), Tailwind CSS, and Framer Motion.
 
 ## Design concept
 
-A "quant lab notebook" aesthetic: warm paper background with a faint dot
-grid, monospace annotations for structure (section labels, timestamps,
-tags), and a deep teal / warm amber accent pair. The hero's signature
-element is a hand-drawn convergence line — read at once as a training loss
-curve settling into a minimum and as a market chart finding its floor,
-tying together the ML work and the trading interest in one image.
+A dark AI/ML-engineer aesthetic: near-black background (#0A0A0F), a
+violet/cyan accent pair, bold oversized display type, and monospace
+terminal-style labels used sparingly for structure. The hero's signature
+element is `NeuralField.tsx` — a canvas-drawn field of drifting nodes that
+link when close, a literal (not decorative) read of "neural network,"
+sitting behind the name and tagline.
 
 ## Getting started
 

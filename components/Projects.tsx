@@ -27,25 +27,26 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className="group flex flex-col rounded-2xl border border-grid bg-white/40 p-6 transition-colors hover:border-signal"
+            className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-accent/60"
           >
-            <div className="flex items-start justify-between gap-3">
-              <h3 className="font-display text-lg font-semibold text-ink">
+            <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100 bg-grad-glow" />
+            <div className="relative flex items-start justify-between gap-3">
+              <h3 className="font-display text-lg font-semibold text-text">
                 {project.title}
               </h3>
               <ArrowUpRight
                 size={18}
-                className="mt-1 shrink-0 text-muted transition-colors group-hover:text-signal"
+                className="mt-1 shrink-0 text-muted transition-colors group-hover:text-accent2"
               />
             </div>
-            <p className="mt-3 flex-1 text-sm leading-relaxed text-ledger/80">
+            <p className="relative mt-3 flex-1 text-sm leading-relaxed text-text/70">
               {project.description}
             </p>
-            <div className="mt-5 flex flex-wrap gap-2">
+            <div className="relative mt-5 flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-paper px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-signal"
+                  className="rounded-full bg-surface2 px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-accent2"
                 >
                   {tag}
                 </span>

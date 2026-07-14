@@ -7,17 +7,16 @@ html {
 }
 
 body {
-  background-image: radial-gradient(circle, #DBD6C4 1px, transparent 1px);
-  background-size: 22px 22px;
+  background-color: #0A0A0F;
 }
 
 ::selection {
-  background-color: #2A6F63;
-  color: #F6F4EC;
+  background-color: #7C5CFF;
+  color: #0A0A0F;
 }
 
 *:focus-visible {
-  outline: 2px solid #2A6F63;
+  outline: 2px solid #22D3EE;
   outline-offset: 3px;
 }
 
@@ -33,7 +32,14 @@ body {
 .section-label {
   font-family: var(--font-jetbrains-mono);
   font-size: 0.75rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #2A6F63;
+  color: #22D3EE;
+}
+
+.grad-text {
+  background: linear-gradient(90deg, #F2F2F6 0%, #F2F2F6 60%, #7C5CFF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

@@ -8,13 +8,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        paper: "#F6F4EC",
-        ink: "#161A17",
-        ledger: "#1F2A24",
-        signal: "#2A6F63", // primary accent — deep lab-teal
-        pulse: "#E0722D", // secondary accent — warm alert amber
-        grid: "#DBD6C4",
-        muted: "#6B7266",
+        bg: "#0A0A0F",
+        surface: "#131319",
+        surface2: "#1A1A22",
+        text: "#F2F2F6",
+        muted: "#8B8B9E",
+        accent: "#7C5CFF",
+        accent2: "#22D3EE",
+        line: "#232330",
       },
       fontFamily: {
         display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
@@ -22,24 +23,21 @@ const config: Config = {
         body: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       backgroundImage: {
-        "dot-grid":
-          "radial-gradient(circle, #DBD6C4 1px, transparent 1px)",
-      },
-      backgroundSize: {
-        "dot-grid": "22px 22px",
+        "grad-glow":
+          "radial-gradient(60% 60% at 50% 0%, rgba(124,92,255,0.28) 0%, rgba(34,211,238,0.10) 45%, rgba(10,10,15,0) 80%)",
       },
       animation: {
-        "pulse-line": "pulse-line 2.4s ease-in-out infinite",
-        "fade-up": "fade-up 0.6s ease-out forwards",
+        "pulse-slow": "pulse-slow 3s ease-in-out infinite",
+        float: "float 6s ease-in-out infinite",
       },
       keyframes: {
-        "pulse-line": {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.35" },
+        "pulse-slow": {
+          "0%, 100%": { opacity: "0.4" },
+          "50%": { opacity: "1" },
         },
-        "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(16px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
         },
       },
     },

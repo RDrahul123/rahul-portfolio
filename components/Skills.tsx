@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { skills } from "@/data/content";
+import TiltCard from "./TiltCard";
 
 export default function Skills() {
   return (
@@ -23,21 +24,22 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className="rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-accent/50"
           >
-            <h3 className="font-display text-base font-semibold text-text">
-              {group.category}
-            </h3>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {group.items.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-line bg-surface2 px-3 py-1 font-mono text-xs text-text/80"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
+            <TiltCard className="group relative rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-accent/50">
+              <h3 className="relative font-display text-base font-semibold text-text">
+                {group.category}
+              </h3>
+              <div className="relative mt-4 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-line bg-surface2 px-3 py-1 font-mono text-xs text-text/80"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </TiltCard>
           </motion.div>
         ))}
       </div>

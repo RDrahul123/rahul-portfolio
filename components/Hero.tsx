@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import { profile } from "@/data/content";
 import { ArrowDown, Github, Linkedin } from "lucide-react";
-import NeuralField from "./NeuralField";
+
+const Scene3D = dynamic(() => import("./Scene3D"), { ssr: false });
 
 export default function Hero() {
   return (
@@ -12,7 +14,9 @@ export default function Hero() {
       className="relative flex min-h-screen flex-col justify-center overflow-hidden px-6 pt-28"
     >
       <div className="pointer-events-none absolute inset-0 bg-grad-glow" />
-      <NeuralField />
+      <div className="absolute inset-0 opacity-90">
+        <Scene3D />
+      </div>
 
       <div className="relative mx-auto w-full max-w-5xl">
         <motion.p

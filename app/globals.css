@@ -37,6 +37,14 @@ body {
   color: #22D3EE;
 }
 
+@media (pointer: fine) {
+  body.cursor-none,
+  body.cursor-none a,
+  body.cursor-none button {
+    cursor: none;
+  }
+}
+
 .grad-text {
   background: linear-gradient(90deg, #F2F2F6 0%, #F2F2F6 60%, #7C5CFF 100%);
   -webkit-background-clip: text;

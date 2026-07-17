@@ -6,10 +6,22 @@ Built with Next.js 14 (App Router), Tailwind CSS, and Framer Motion.
 
 A dark AI/ML-engineer aesthetic: near-black background (#0A0A0F), a
 violet/cyan accent pair, bold oversized display type, and monospace
-terminal-style labels used sparingly for structure. The hero's signature
-element is `NeuralField.tsx` — a canvas-drawn field of drifting nodes that
-link when close, a literal (not decorative) read of "neural network,"
-sitting behind the name and tagline.
+terminal-style labels used sparingly for structure.
+
+## Interactive elements
+
+- `components/Scene3D.tsx` — a real Three.js scene (via React Three Fiber)
+  rendered behind the hero: ~90 nodes distributed in a sphere, connected
+  when close, rotating continuously and tilting toward the cursor. Loaded
+  client-only via `next/dynamic` so it never ships to, or blocks, the
+  server render.
+- `components/TiltCard.tsx` — a pointer-tracking tilt wrapper (rotateX/Y +
+  a cursor-follow glow) applied to the project and skill cards.
+- `components/CustomCursor.tsx` — a magnetic ring cursor that expands over
+  links and buttons. Automatically disabled on touch devices and when the
+  OS "reduce motion" setting is on.
+
+All motion respects `prefers-reduced-motion`.
 
 ## Getting started
 

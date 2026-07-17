@@ -21,6 +21,17 @@ terminal-style labels used sparingly for structure.
   links and buttons. Automatically disabled on touch devices and when the
   OS "reduce motion" setting is on.
 
+- `components/ProficiencyRadar.tsx` — an interactive SVG radar chart
+  (hover or tap a point to see the exact percentage), matching the
+  "Proficiency Radar" widget from your current site, shown alongside the
+  skill tag cards.
+
+## Adding your photo
+
+Drop a square photo in as `public/portrait.jpg` (600x600px+ recommended).
+The hero picks it up automatically — until it's there, it shows your
+initials as a placeholder circle.
+
 All motion respects `prefers-reduced-motion`.
 
 ## Getting started

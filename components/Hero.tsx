@@ -1,11 +1,43 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { profile } from "@/data/content";
 import { ArrowDown, Github, Linkedin } from "lucide-react";
 
 const Scene3D = dynamic(() => import("./Scene3D"), { ssr: false });
+
+function Portrait() {
+  const [failed, setFailed] = useState(false);
+  const initials = profile.name
+    .split(" ")
+    .map((n) => n[0])
+    .join("");
+
+  if (failed) {
+    return (
+      <div className="relative flex h-full w-full items-center justify-center rounded-full border border-line bg-surface">
+        <span className="font-display text-5xl font-semibold text-text/40">
+          {initials}
+        </span>
+        <p className="absolute bottom-4 px-4 text-center font-mono text-[9px] uppercase tracking-widest text-muted">
+          Add photo at /public/portrait.jpg
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/portrait.jpg"
+      alt={profile.name}
+      onError={() => setFailed(true)}
+      className="h-full w-full rounded-full border border-line object-cover"
+    />
+  );
+}
 
 export default function Hero() {
   return (
@@ -18,7 +50,8 @@ export default function Hero() {
         <Scene3D />
       </div>
 
-      <div className="relative mx-auto w-full max-w-5xl">
+      <div className="relative mx-auto grid w-full max-w-5xl items-center gap-10 sm:grid-cols-[1.15fr_0.85fr]">
+        <div>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,6 +118,17 @@ export default function Hero() {
           >
             <Linkedin size={18} />
           </a>
+        </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="relative mx-auto hidden aspect-square w-full max-w-[300px] sm:block"
+        >
+          <div className="absolute -inset-3 rounded-full bg-grad-glow blur-xl" />
+          <Portrait />
         </motion.div>
       </div>
 

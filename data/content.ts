@@ -37,6 +37,15 @@ export const skills = [
   },
 ];
 
+export const proficiency = [
+  { label: "Python", value: 90 },
+  { label: "Machine Learning", value: 85 },
+  { label: "SQL", value: 82 },
+  { label: "Power BI", value: 78 },
+  { label: "Cloud (AWS/Docker)", value: 72 },
+  { label: "Full-Stack", value: 68 },
+];
+
 export const projects = [
   {
     title: "The Stock",
